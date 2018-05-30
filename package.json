@@ -1,0 +1,30 @@
+{
+  "name": "eleme",
+  "version": "1.0.0",
+  "description": "使用vue vue-router axios webpack vuex 仿饿了移动端",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --config ./build/webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xueyuana/eleme.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xueyuana/eleme/issues"
+  },
+  "homepage": "https://github.com/xueyuana/eleme#readme",
+  "devDependencies": {
+    "css-loader": "^0.28.11",
+    "file-loader": "^1.1.11",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.10.1",
+    "webpack-cli": "^2.1.4"
+  },
+  "dependencies": {
+    "vue": "^2.5.16"
+  }
+}
