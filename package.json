@@ -1,5 +1,8 @@
 {
   "name": "eleme",
+  "sideEffects": [
+    "*.css"
+  ],
   "version": "1.0.0",
   "description": "使用vue vue-router axios webpack vuex 仿饿了移动端",
   "main": "index.js",
@@ -7,7 +10,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack --config ./build/webpack.config.js",
     "watch": "webpack --watch --config ./build/webpack.config.js",
-    "start": "webpack-dev-server --open --config ./build/webpack.config.js"
+    "start": "webpack-dev-server --open --env.development --env.NODE_ENV=development --config ./build/webpack.dev.js",
+    "server": "node ./build/server.js",
+    "build": "webpack --env.production --config ./build/webpack.prod.js"
   },
   "repository": {
     "type": "git",
@@ -22,13 +27,16 @@
   "devDependencies": {
     "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^0.28.11",
+    "express": "^4.16.3",
     "file-loader": "^1.1.11",
     "html-webpack-plugin": "^3.2.0",
     "style-loader": "^0.21.0",
     "url-loader": "^1.0.1",
     "webpack": "^4.10.1",
     "webpack-cli": "^2.1.4",
-    "webpack-dev-server": "^3.1.4"
+    "webpack-dev-middleware": "^3.1.3",
+    "webpack-dev-server": "^3.1.4",
+    "webpack-merge": "^4.1.2"
   },
   "dependencies": {
     "vue": "^2.5.16"

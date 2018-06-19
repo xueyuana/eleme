@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+const webpack = require('webpack')
 
 module.exports = {
   //单个入口文件
@@ -17,13 +18,15 @@ module.exports = {
   // },
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname,'../dist')
+    path: path.resolve(__dirname,'../dist'),
+    publicPath: '/'
   },
 
-  mode: 'none',
+  mode: 'production',
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: '../dist'
+    contentBase: '../dist',
+    inline: true
   },
   resolve: {
     alias: {
@@ -62,6 +65,8 @@ module.exports = {
     }),
     new CleanWebpackPlugin(['dist'],{
     root: path.resolve(__dirname,'../')
-    })
+    }),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NamedModulesPlugin()
   ]
 }
