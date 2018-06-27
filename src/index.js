@@ -4,18 +4,13 @@ import Vue from 'vue'
 import './base.css'
 import {cube} from './print.js'
 import another from './another.js'
+import App from './app.vue'
 
 var app = new Vue({
   el: '#app',
-  data: {
-    message: 'Hello Vue!'
-  },
-  template: '<div class="font" @click="btn">333</div>',
-  methods: {
-    btn: () => {
-      cube()
-      another()
-    }
+  template: '<App/>',
+  components: {
+    App
   }
 })
 

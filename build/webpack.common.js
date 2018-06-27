@@ -1,6 +1,7 @@
 const path = require('path')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
   entry: {
@@ -35,6 +36,12 @@ module.exports = {
         use: [
           'file-loader'
         ]
+      },
+      {
+        test: /\.vue$/,
+        use: [
+          'vue-loader'
+        ]
       }
     ]
   },
@@ -46,6 +53,7 @@ module.exports = {
       title: 'production',
       template: './index.html',
       inject: true
-    })
+    }),
+    new VueLoaderPlugin()
   ]
 }
